@@ -1,0 +1,146 @@
+/* Top Header */
+.top-header {
+  /* background-color: #ed1c23; */
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+}
+
+.left-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.left-item .top-icon {
+  color: #ffffff;
+  font-weight: 100;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.left-item .h4 {
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin: 0 auto;
+}
+
+.top-btn {
+  background-color: #2e3092;
+  padding: 3px 10px;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  transition: 0.7s linear;
+}
+
+.top-btn:hover {
+  background-color: #ed1c23;
+}
+
+/* Navbar */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.logo {
+  width: 130px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu {
+  display: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 24px;
+  color: gray;
+}
+
+.header-items {
+  display: flex;
+}
+
+.header-item {
+  margin: 0 10px;
+}
+
+.header-item .h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline; /* Changed to inline */
+}
+
+/* Media Query for small devices */
+@media (max-width: 768px) {
+  .header-left {
+    flex: 1;
+  }
+
+  .top-hide {
+    display: none;
+  }
+
+  .header-menu {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  .header-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 999;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+
+  .header-items .show {
+    display: flex; /* Show when menuVisible is true */
+  }
+
+  .header-item {
+    margin: 5px 0;
+  }
+
+  .header-item .h5 {
+    display: flex; /* Display as flex for vertical alignment */
+    justify-content: flex-start;
+  }
+}

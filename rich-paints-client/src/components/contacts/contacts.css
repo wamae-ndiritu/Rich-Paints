@@ -1,0 +1,134 @@
+.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.contact-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 70px 0 70px;
+  background: url("/public/Images/products/product-9.PNG");
+  background-position: center;
+}
+
+.contact-subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-title {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.contact-title h6 {
+  margin: auto 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+}
+
+.contact-social p {
+  margin-left: 40px;
+  padding: 1px;
+  margin-top: 0;
+  color: #000;
+  font-weight: 600;
+}
+
+.contact-right {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.right-title {
+  text-align: start !important;
+}
+
+.message-form input,
+.message-form textarea {
+  width: 80%;
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.btn-contact {
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 10px 10px;
+  width: 80%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+@media (max-width: 768.5px) {
+  .contact-wrapper {
+    width: 100%;
+  }
+
+  .contact-left {
+    flex: 100%;
+  }
+
+  .contact-right {
+    flex: 100%;
+    margin-left: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 438.5px) {
+  .message-form input,
+  .message-form textarea {
+    width: 100%;
+  }
+}

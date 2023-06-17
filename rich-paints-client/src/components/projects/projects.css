@@ -1,0 +1,74 @@
+.project-tabs-cont {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.project-tab {
+  width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #2e3092;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.project-tab h6 {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  margin: auto 0;
+}
+
+.tab-active {
+  background-color: #ed1c23;
+  border-color: gray;
+}
+
+.tab-active h6 {
+  color: #fff;
+}
+
+.caption-cont {
+  position: relative;
+}
+
+.project-caption {
+  background-color: #ed1c23;
+  width: 100px;
+  padding: 5px 0;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: center;
+}
+
+.projects-btn {
+  background-color: #ed1c23;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 200px;
+  padding: 5px;
+  margin: 0 auto;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.projects-btn h6 {
+  margin: auto 0;
+  text-transform: uppercase;
+}
+
+.projects-btn i {
+  margin: auto 0;
+  padding: 0;
+  font-size: 24px;
+  margin-left: 10px;
+}

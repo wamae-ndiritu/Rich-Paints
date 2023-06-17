@@ -1,0 +1,160 @@
+:root {
+  --color-blue: #2e3092;
+  --color-red: #ed1c23;
+  --color-gray: gray;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: var(--color-gray);
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+}
+
+li {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.col-padding {
+  padding: 5px !important;
+}
+
+.btn-main:hover {
+  background-color: var(--color-blue);
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+}
+
+.product-badge {
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  padding: 5px 10px;
+  width: 80%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.product-badge p {
+  color: #fff;
+  margin: auto 0;
+  text-transform: uppercase;
+}
+
+.product-overlay {
+  background-color: orange;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 3px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s ease-in all;
+}
+
+.product-overlay-show {
+  opacity: 0.7;
+}
+
+.view-badge {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  padding: 5px 10px;
+  border-radius: 7px;
+}
+
+.sub-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+/* TitleBar */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title .h5 {
+  margin: 0;
+  padding: 0;
+  color: gray;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.section-title .hr {
+  background-color: var(--color-blue);
+  width: 100px;
+  height: 3px;
+  margin-top: 5px;
+}
+/* TitleBar */
+.partner-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.partner {
+  margin: 20px;
+  width: 100px;
+  height: 50px;
+}
+
+.partner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 434px) {
+  .product-card img {
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .product-overlay i {
+    margin-bottom: 5px;
+  }
+
+  .product-overlay .h6 {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,29 @@
+.about-wrapper {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+.about-left {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.about-left img {
+  max-height: 200px;
+}
+
+.about-right {
+  flex: 3;
+  background-color: #fff;
+  padding: 30px;
+}
+
+@media (max-width: 434px) {
+  .about-left {
+    flex: 100%;
+    margin-top: 20px;
+  }
+}
