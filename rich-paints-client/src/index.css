@@ -140,6 +140,14 @@ li {
   object-fit: contain;
 }
 
+.image-viewer {
+  width: 300px;
+}
+
+.image-view {
+  width: 100px !important;
+}
+
 @media (max-width: 434px) {
   .product-card img {
     height: auto;

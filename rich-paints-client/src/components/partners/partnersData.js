@@ -9,7 +9,7 @@ export const partners = [
   },
   {
     _id: 2,
-    img: "/Images/partners/partner-3.png",
+    img: "/Images/partners/partner-3.PNG",
   },
   {
     _id: 3,

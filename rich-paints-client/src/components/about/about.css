@@ -21,6 +21,24 @@
   padding: 30px;
 }
 
+/* About Page */
+.about-us {
+  width: 40%;
+}
+
+.about-us p {
+  padding: 3px;
+  letter-spacing: 1px;
+}
+/* About Page */
+
+@media (max-width: 768.5px) {
+  .about-us {
+    width: 100%;
+    padding: 30px;
+  }
+}
+
 @media (max-width: 434px) {
   .about-left {
     flex: 100%;

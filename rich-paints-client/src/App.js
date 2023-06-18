@@ -5,16 +5,22 @@ import Header from "./components/header/Header";
 import ProductPage from "./screens/ProductPage";
 import Footer from "./components/footer/Footer";
 import ContactsPage from "./screens/ContactsPage";
+import ServicePage from "./screens/ServicePage";
+import AboutPage from "./screens/AboutPage";
+import ScrollToTop from "./utilities/ScroolToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/projects" element={<ProjectScreen />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/services" element={<ServicePage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </Router>

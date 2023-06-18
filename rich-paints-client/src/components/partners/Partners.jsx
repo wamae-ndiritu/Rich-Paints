@@ -10,8 +10,8 @@ const Partners = () => {
         {partners.map((partner) => {
           const { _id, img } = partner;
           return (
-            <div className="partner">
-              <img src={img} alt="..." key={_id} />
+            <div className="partner" key={_id}>
+              <img src={img} alt="..." />
             </div>
           );
         })}

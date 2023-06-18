@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./projects.css";
 import TitleBar from "../TitleBar";
 import { projects, completedProjects } from "./data/projectData";
+import Loading from "../Loading";
 
 const Projects = () => {
   const location = useLocation();
@@ -12,6 +13,15 @@ const Projects = () => {
   const [showOngoing, setShowOngoing] = useState(false);
   const [items, setItems] = useState([]);
   const [isProjectPage, setIsProjectPage] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleToggle = () => {
     setShowCompleted(!showCompleted);
@@ -39,7 +49,7 @@ const Projects = () => {
   }, [showCompleted, showOngoing]);
 
   return (
-    <div className="container">
+    <div className="container projects-cont">
       <TitleBar>Our Projects</TitleBar>
       <div className="project-tabs-cont">
         <div
@@ -55,43 +65,61 @@ const Projects = () => {
           <h6>On-Going</h6>
         </div>
       </div>
-      <div className="row d-flex justify-content-center">
-        {showCompleted &&
-          !isProjectPage &&
-          completedProjects.map((project) => {
-            const { _id, before, after } = project;
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div className="row d-flex justify-content-center">
+          {showCompleted &&
+            !isProjectPage &&
+            completedProjects.map((project) => {
+              const { _id, before, after } = project;
+              return (
+                <div className="col-lg-6 col-padding d-flex col-md-6" key={_id}>
+                  <div className="col-6 col-padding caption-cont">
+                    <h6 className="h6 project-caption">Before</h6>
+                    <img src={before} alt="..." />
+                  </div>
+                  <div className="col-6 col-padding caption-cont">
+                    <h6 className="h6 project-caption">After</h6>
+                    <img src={after} alt="..." />
+                  </div>
+                </div>
+              );
+            })}
+          {items.map((project, index) => {
+            const { _id, image, category } = project;
             return (
-              <div className="col-lg-6 col-padding d-flex col-md-6" key={_id}>
-                <div className="col-6 col-padding caption-cont">
-                  <h6 className="h6 project-caption">Before</h6>
-                  <img src={before} alt="..." />
-                </div>
-                <div className="col-6 col-padding caption-cont">
-                  <h6 className="h6 project-caption">After</h6>
-                  <img src={after} alt="..." />
-                </div>
+              <div
+                className="col-lg-3 col-md-4 col-6 col-padding caption-cont"
+                key={_id}
+              >
+                <h6 className="h6 project-caption">{category}</h6>
+                <img src={image} alt="..." />
               </div>
             );
           })}
-        {items.map((project) => {
-          const { _id, image, category } = project;
-          return (
-            <div
-              className="col-lg-3 col-md-4 col-6 col-padding caption-cont"
-              key={_id}
-            >
-              <h6 className="h6 project-caption">{category}</h6>
-              <img src={image} alt="..." />
-            </div>
-          );
-        })}
-      </div>
+        </div>
+      )}
       {!isProjectPage && (
         <Link to="/projects" className="projects-btn">
           <h6>View More Projects</h6>
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
         </Link>
       )}
+      {/* <div className="image-viewer-cont">
+        {isViewerOpen && (
+          <Carousel autoPlay={true} interval={3000} showThumbs={false}>
+            {items.map((item) => {
+              const { _id, image } = item;
+              return (
+                <div key={_id}>
+                  <img src={image} alt="..." />
+                </div>
+              );
+            })}
+          </Carousel>
+        )}
+      </div> */}
     </div>
   );
 };

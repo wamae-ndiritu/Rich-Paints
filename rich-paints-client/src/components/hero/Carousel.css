@@ -98,7 +98,7 @@ button:hover,
 
 @media (max-width: 768.5px) {
   .slide {
-    height: 35vh;
+    height: 50vh;
     margin-top: 10px;
   }
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import TitleBar from "../TitleBar";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -15,7 +17,7 @@ const Footer = () => {
                 <div className="footer-logo">
                   <img src="/logo192.png" alt="logo" />
                 </div>
-                <h6 className="h6">About Us</h6>
+                <TitleBar>About Us</TitleBar>
               </div>
               <div className="footer-text">
                 <p>
@@ -28,18 +30,32 @@ const Footer = () => {
               </div>
             </div>
             <div className="footer-links">
-              <h6 className="h6">Quick Links</h6>
+              <div className="foot-title">
+                <TitleBar>Quick Links</TitleBar>
+              </div>
               <ul>
-                <li>Products</li>
-                <li>Projects</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Painting Tips</li>
+                <li>
+                  <Link to="/">Products</Link>
+                </li>
+                <li>
+                  <Link to="/projects">Projects</Link>
+                </li>
+                <li>
+                  <Link to="/about">About Us</Link>
+                </li>
+                <li>
+                  <Link to="/contacts">Contact Us</Link>
+                </li>
+                <li>
+                  <Link to="/">Painting Tips</Link>
+                </li>
               </ul>
             </div>
           </div>
           <div className="footer-right">
-            <h6 className="h6">Connect With Us</h6>
+            <div className="foot-title">
+              <TitleBar>Connect With Us</TitleBar>
+            </div>
             <div className="mb-3 footer-input">
               <input
                 className=""
@@ -53,21 +69,21 @@ const Footer = () => {
               <p className="icon-text">richpaintskenya@gmail.com</p>
             </div>
             <div className="icon-cont">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <i className="fa fa-map-marker" aria-hidden="true"></i>
               <p className="icon-text">Nairobi, Kenya</p>
             </div>
             <div className="social-cont">
               <div className="social-icon">
-                <FacebookIcon />
+                <FacebookIcon style={{ color: "blue" }} />
               </div>
               <div className="social-icon">
-                <TwitterIcon />
+                <TwitterIcon style={{ color: "blue" }} />
               </div>
               <div className="social-icon">
-                <LinkedInIcon />
+                <LinkedInIcon style={{ color: "darkblue" }} />
               </div>
               <div className="social-icon">
-                <WhatsAppIcon />
+                <WhatsAppIcon style={{ color: "green" }} />
               </div>
             </div>
           </div>
