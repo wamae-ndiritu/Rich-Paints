@@ -91,3 +91,14 @@
   font-size: 24px;
   margin-left: 10px;
 }
+
+.project-subtitle {
+  margin: 20px 0 5px 0;
+}
+
+.project-subtitle .h6 {
+  text-transform: uppercase;
+  border-bottom: 3px solid #ed1c23;
+  width: max-content;
+  padding: 3px 0;
+}

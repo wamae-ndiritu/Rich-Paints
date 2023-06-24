@@ -6,6 +6,7 @@ import TitleBar from "../components/TitleBar";
 import AboutUs from "../components/about/AboutUs";
 import Projects from "../components/projects/Projects";
 import Partners from "../components/partners/Partners";
+import CSR from "../components/projects/CSR";
 
 const HomeScreen = () => {
   return (
@@ -16,6 +17,7 @@ const HomeScreen = () => {
       <Services />
       <AboutUs />
       <Projects />
+      <CSR />
       <Partners />
     </div>
   );
