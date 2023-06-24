@@ -2,7 +2,7 @@ export const products = [
   {
     _id: 0,
     title: "Rich Super Gloss",
-    img: "/Images/products/super-gloss-1.PNG",
+    img: "/Images/products/super-gloss-1.jpeg",
     description:
       "Rich Super Gloss is a superior quality protective finish producing a deep gloss finish on properly prepared surfaces. Suitable for use on wood, metal, plaster, wallboards, brickwork and stonework etc., over the appropriate primer and undercoat. Rich Super Gloss is formulated to offer maximum durability in extreme tropical coastal weather conditions.",
   },
@@ -30,7 +30,7 @@ export const products = [
   {
     _id: 4,
     title: "Cover Matt",
-    img: "/Images/products/cover-matt-1.PNG",
+    img: "/Images/products/cover-matt-1.jpeg",
     description:
       "Rich Cover Matt possesses excellent obliterating characteristics and is extremely easy to apply. Characteristics: It is high opacity copolymer emulsion paint and it has been added fungicide to inhibit mold growth.",
   },

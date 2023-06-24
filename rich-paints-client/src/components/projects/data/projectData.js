@@ -15,11 +15,6 @@ export const projects = [
     image: "/Images/projects/completed-3.jpeg",
   },
   {
-    _id: 3,
-    category: "completed",
-    image: "/Images/projects/completed-4.jpeg",
-  },
-  {
     _id: 4,
     category: "completed",
     image: "/Images/projects/completed-6.jpeg",

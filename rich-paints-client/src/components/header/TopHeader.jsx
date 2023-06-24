@@ -17,7 +17,7 @@ const TopHeader = () => {
             <MailOutlineIcon className="top-icon" />
             <h4 className="h4">richpaintskenya@gmail.com</h4>
           </div>
-          <div className="left-item top-hide">
+          <div className="left-item">
             <LocationOnIcon className="top-icon" />
             <h4 className="h4"> Nairobi Kenya</h4>
           </div>
