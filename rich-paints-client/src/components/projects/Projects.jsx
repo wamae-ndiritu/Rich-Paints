@@ -5,6 +5,7 @@ import "./projects.css";
 import TitleBar from "../TitleBar";
 import { projects, completedProjects } from "./data/projectData";
 import Loading from "../Loading";
+import EastIcon from "@mui/icons-material/East";
 
 const Projects = () => {
   const location = useLocation();
@@ -101,25 +102,13 @@ const Projects = () => {
         </div>
       )}
       {!isProjectPage && (
-        <Link to="/projects" className="projects-btn">
+        <Link to="/projects" className="btn-more" style={{ width: "250px" }}>
           <h6>View More Projects</h6>
-          <i className="fa fa-angle-right" aria-hidden="true"></i>
+          <div className="more-icon">
+            <EastIcon />
+          </div>
         </Link>
       )}
-      {/* <div className="image-viewer-cont">
-        {isViewerOpen && (
-          <Carousel autoPlay={true} interval={3000} showThumbs={false}>
-            {items.map((item) => {
-              const { _id, image } = item;
-              return (
-                <div key={_id}>
-                  <img src={image} alt="..." />
-                </div>
-              );
-            })}
-          </Carousel>
-        )}
-      </div> */}
     </div>
   );
 };

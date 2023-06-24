@@ -24,6 +24,33 @@ li {
   font-family: "Helvetica Neue", Helvetica, Arial;
 }
 
+.btn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  padding: 5px 10px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-more h6 {
+  margin: auto 0;
+  color: #fff;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.btn-more .more-icon {
+  color: #fff;
+}
+
 .col-padding {
   padding: 5px !important;
 }
