@@ -53,7 +53,7 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/">
-            <img src="/new_logo.png" alt="" className="mobile-logo" />
+            <img src="/new_logo.PNG" alt="" className="mobile-logo" />
           </Link>
           <div className="header-menu" onClick={toggleMenu}>
             {menuVisible ? <CloseIcon /> : <MenuIcon />}
