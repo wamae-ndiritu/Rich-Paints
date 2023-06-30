@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TitleBar from "../TitleBar";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+// import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+// import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./footer.css";
 const Footer = () => {
   return (
@@ -63,18 +62,28 @@ const Footer = () => {
               <p className="icon-text">Nairobi, Kenya</p>
             </div>
             <div className="social-cont">
-              <div className="social-icon">
+              <a
+                href="https://www.facebook.com/richpaintskenya"
+                rel="noreferrer"
+                target="_blank"
+                className="social-icon"
+              >
                 <FacebookIcon style={{ color: "blue" }} />
-              </div>
-              <div className="social-icon">
+              </a>
+              <a
+                href="https://twitter.com/richpaintskenya"
+                rel="noreferrer"
+                target="_blank"
+                className="social-icon"
+              >
                 <TwitterIcon style={{ color: "blue" }} />
-              </div>
-              <div className="social-icon">
+              </a>
+              {/* <div className="social-icon">
                 <LinkedInIcon style={{ color: "darkblue" }} />
               </div>
               <div className="social-icon">
                 <WhatsAppIcon style={{ color: "green" }} />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

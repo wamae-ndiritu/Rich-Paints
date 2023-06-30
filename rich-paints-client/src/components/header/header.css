@@ -132,6 +132,11 @@
 .active-nav {
   border-bottom: 3px solid #2e3092;
   padding-bottom: 5px;
+  background-color: #fff;
+  color: #2e3092 !important;
+  height: 100%;
+  margin: auto 0;
+  padding: 10px;
 }
 
 /* mobile-header */
