@@ -52,6 +52,39 @@
   background-color: initial;
 }
 
+/* Painting Tips Page */
+.tips-cont {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.tips-cont h2 {
+  font-size: 24px;
+  color: #555555;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.tips-item h6 {
+  font-weight: bold;
+  color: #555555;
+}
+
+.tips-item p {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: Arial, sans-serif;
+}
+/* Painting Tips Page */
+
+@media (max-width: 768.5px) {
+  .tips-cont {
+    width: 90%;
+  }
+}
+
 @media (max-width: 438.5px) {
   .tips-banner {
     height: auto;
@@ -67,5 +100,19 @@
 
   .banner-info p {
     font-size: 16px;
+  }
+
+  .tips-cont {
+    width: 100%;
+    padding: 20px 20px;
+  }
+
+  .tips-cont h2 {
+    font-size: 20px;
+  }
+
+  .tips-item {
+    font-size: 16px;
+    padding: 3px 0;
   }
 }

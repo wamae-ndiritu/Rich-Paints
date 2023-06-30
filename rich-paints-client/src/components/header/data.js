@@ -27,7 +27,7 @@ export const navs = [
   {
     _id: 5,
     title: "Painting Tips",
-    url: "/tips",
+    url: "/painting-tips",
   },
   {
     _id: 6,

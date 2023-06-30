@@ -8,6 +8,7 @@ import ContactsPage from "./screens/ContactsPage";
 import ServicePage from "./screens/ServicePage";
 import AboutPage from "./screens/AboutPage";
 import ScrollToTop from "./utilities/ScroolToTop";
+import PaintingTipsPage from "./screens/PaintingTipsPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/services" element={<ServicePage />} />
+        <Route path="/painting-tips" element={<PaintingTipsPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
