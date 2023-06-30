@@ -1,16 +1,23 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contacts.css";
+import { toast } from "react-toastify";
+import Toast from "../../utilityComponents/Toast";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TitleBar from "../TitleBar";
 
+const ToastObjects = {
+  pauseOnFocusLoss: false,
+  draggable: false,
+  pauseOnHover: false,
+  autoClose: 2000,
+};
+
 const Contacts = () => {
   const form = useRef();
-
-  const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
 
   const sendEmail = (e) => {
@@ -24,16 +31,18 @@ const Contacts = () => {
       )
       .then(
         (result) => {
-          setIsSuccess(true);
+          toast.success("Message sent successfully!", ToastObjects);
         },
         (error) => {
-          console.log(error);
+          setIsError(true);
         }
       );
     e.target.reset();
   };
+
   return (
-    <div className="cont mt-">
+    <div className="cont mt-3">
+      <Toast />
       <TitleBar>Our Contacts</TitleBar>
       <div className="contact mt-3">
         <div className="contact-wrapper">
