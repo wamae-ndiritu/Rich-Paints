@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+.footer p {
+  color: gray;
+  font-size: 14px;
+}
+
 .footer-wrapper {
   display: flex;
   flex-wrap: wrap;
