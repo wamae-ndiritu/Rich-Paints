@@ -20,25 +20,48 @@ const ToastObjects = {
 const Contacts = () => {
   const form = useRef();
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("Messagenot sent!");
+  const [details, setDetails] = useState({
+    user_name: "",
+    user_email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value });
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
+    console.log(form.current);
     setIsError(false);
-    emailjs
-      .sendForm(
-        "service_4gxtde7",
-        "template_htmmfp8",
-        form.current,
-        "KehPQQgwKRR6ja30g"
-      )
-      .then(
-        (result) => {
-          toast.success("Message sent successfully!", ToastObjects);
-        },
-        (error) => {
-          setIsError(true);
-        }
-      );
+
+    if (
+      details.user_name === "" ||
+      details.user_email === "" ||
+      details.subject === "" ||
+      details.message === ""
+    ) {
+      setErrorMessage("All fields required!");
+      setIsError(true);
+    } else {
+      emailjs
+        .sendForm(
+          "service_4gxtde7",
+          "template_htmmfp8",
+          form.current,
+          "KehPQQgwKRR6ja30g"
+        )
+        .then(
+          (result) => {
+            toast.success("Message sent successfully!", ToastObjects);
+          },
+          (error) => {
+            setIsError(true);
+          }
+        );
+    }
     e.target.reset();
   };
 
@@ -90,7 +113,7 @@ const Contacts = () => {
           <div className="contact-right">
             <TitleBar className="right-title">LEAVE US A MESSAGE</TitleBar>
             {isError && (
-              <Message variant="alert-danger">Message not sent!</Message>
+              <Message variant="alert-danger">{errorMessage}</Message>
             )}
             <form className="message-form" ref={form} onSubmit={sendEmail}>
               <div class="mb-3">
@@ -103,6 +126,7 @@ const Contacts = () => {
                   id="name"
                   placeholder="John Doe"
                   name="user_name"
+                  onChange={handleChange}
                 />
               </div>
               <div class="mb-3">
@@ -111,6 +135,7 @@ const Contacts = () => {
                 </label>
                 <input
                   name="user_email"
+                  onChange={handleChange}
                   type="email"
                   class="form-control"
                   id="email"
@@ -127,6 +152,7 @@ const Contacts = () => {
                   id="subject"
                   placeholder="Your Subject"
                   name="subject"
+                  onChange={handleChange}
                 />
               </div>
               <div class="mb-3">
@@ -135,6 +161,7 @@ const Contacts = () => {
                 </label>
                 <textarea
                   name="message"
+                  onChange={handleChange}
                   rows="5"
                   class="form-control"
                   id="message"
