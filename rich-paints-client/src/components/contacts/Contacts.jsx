@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contacts.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -10,26 +10,27 @@ import TitleBar from "../TitleBar";
 const Contacts = () => {
   const form = useRef();
 
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const sendEmail = (e) => {
-    e.preventDefault(); // prevents the page from reloading when you hit “Send”
-
-    console.log(form.current.form);
-
+    e.preventDefault();
     emailjs
       .sendForm(
-        "service_hb3rjlf",
-        "template_kz6ox03",
-        form.current.form,
+        "service_4gxtde7",
+        "template_htmmfp8",
+        form.current,
         "KehPQQgwKRR6ja30g"
       )
       .then(
         (result) => {
-          // show the user a success message
+          setIsSuccess(true);
         },
         (error) => {
-          // show the user an error
+          console.log(error);
         }
       );
+    e.target.reset();
   };
   return (
     <div className="cont mt-">
@@ -77,7 +78,7 @@ const Contacts = () => {
           </div>
           <div className="contact-right">
             <TitleBar className="right-title">LEAVE US A MESSAGE</TitleBar>
-            <div className="message-form" ref={form}>
+            <form className="message-form" ref={form} onSubmit={sendEmail}>
               <div class="mb-3">
                 <label for="name" class="form-label">
                   Full Name
@@ -87,7 +88,7 @@ const Contacts = () => {
                   class="form-control"
                   id="name"
                   placeholder="John Doe"
-                  name="from_name"
+                  name="user_name"
                 />
               </div>
               <div class="mb-3">
@@ -95,7 +96,7 @@ const Contacts = () => {
                   Email
                 </label>
                 <input
-                  name="reply_to"
+                  name="user_email"
                   type="email"
                   class="form-control"
                   id="email"
@@ -111,7 +112,7 @@ const Contacts = () => {
                   class="form-control"
                   id="subject"
                   placeholder="Your Subject"
-                  name=""
+                  name="subject"
                 />
               </div>
               <div class="mb-3">
@@ -126,10 +127,10 @@ const Contacts = () => {
                   placeholder="Type your message here..."
                 />
               </div>
-              <div className="btn-contact" onClick={sendEmail}>
+              <button type="submit" className="btn-contact">
                 Send Message
-              </div>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>

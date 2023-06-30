@@ -42,7 +42,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #2e3092;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,6 +78,11 @@
 .message-form input,
 .message-form textarea {
   width: 80%;
+}
+
+.message-form label {
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .message-form input:focus,
