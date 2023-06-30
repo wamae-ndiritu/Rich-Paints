@@ -81,7 +81,21 @@ li {
   left: 10px;
 }
 
-.product-badge p {
+.bottom-badge {
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
+  padding: 5px 10px;
+  width: 80%;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.product-badge p,
+.bottom-badge p {
   color: #fff;
   margin: auto 0;
   text-transform: uppercase;
@@ -177,7 +191,24 @@ li {
 
 @media (max-width: 434px) {
   .product-card img {
-    height: auto;
+    max-height: 350px;
+  }
+
+  .product-badge {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    padding: 10px;
+  }
+
+  .product-badge p {
+    text-align: center;
+  }
+
+  .bottom-badge {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
 
   .card-title {

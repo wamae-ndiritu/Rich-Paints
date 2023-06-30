@@ -8,61 +8,51 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "./footer.css";
 const Footer = () => {
   return (
-    <div className="cont mt-3">
+    <div className="cont mt-5">
       <div className="footer">
         <div className="footer-wrapper">
           <div className="footer-left">
-            <div className="footer-about">
-              <div className="about-head">
-                <div className="footer-logo">
-                  <img src="/logo192.png" alt="logo" />
-                </div>
-                <TitleBar>About Us</TitleBar>
-              </div>
-              <div className="footer-text">
-                <p>
-                  Rich paints is a privately held company and duly registered
-                  under the Company Laws of Kenya. We are a team of; young,
-                  energetic, vibrant and free thinking individuals with only one
-                  objective: Making Rich paints the number one paint company in
-                  Kenya.
-                </p>
-              </div>
+            <div className="footer-logo">
+              <img src="/new_logo.PNG" alt="logo" />
             </div>
-            <div className="footer-links">
-              <div className="foot-title">
-                <TitleBar>Quick Links</TitleBar>
-              </div>
-              <ul>
-                <li>
-                  <Link to="/">Products</Link>
-                </li>
-                <li>
-                  <Link to="/projects">Projects</Link>
-                </li>
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/contacts">Contact Us</Link>
-                </li>
-                <li>
-                  <Link to="/">Painting Tips</Link>
-                </li>
-              </ul>
+            <div className="footer-text">
+              <p>
+                Rich paints is a privately held company and duly registered
+                under the Company Laws of Kenya. We are a team of; young,
+                energetic, vibrant and free thinking individuals with only one
+                objective: Making Rich paints the number one paint company in
+                Kenya.
+              </p>
             </div>
+            <div className="footer-links"></div>
+          </div>
+          <div className="footer-center">
+            <ul>
+              <li>
+                <Link to="/">Products</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contacts">Contact Us</Link>
+              </li>
+              <li>
+                <Link to="/">Painting Tips</Link>
+              </li>
+            </ul>
           </div>
           <div className="footer-right">
-            <div className="foot-title">
-              <TitleBar>Connect With Us</TitleBar>
-            </div>
             <div className="mb-3 footer-input">
               <input
                 className=""
                 type="text"
                 placeholder="youremail@example.com"
               />
-              <button className="btn-footer">Subscribe</button>
+              <button className="btn-footer">Subscribe to Tips</button>
             </div>
             <div className="icon-cont">
               <i className="fa fa-envelope-o" aria-hidden="true"></i>
@@ -87,11 +77,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <hr />
-          <p className="copy-right">
-            &copy; Rich Paints Ltd | All Rights Reserved 2023
-          </p>
         </div>
+        <hr />
+        <p className="copy-right">
+          &copy; Rich Paints Ltd | All Rights Reserved 2023
+        </p>
       </div>
     </div>
   );

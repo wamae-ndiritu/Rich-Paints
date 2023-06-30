@@ -31,7 +31,7 @@ const Products = () => {
           const { _id, title, img } = product;
           return (
             <div
-              className="col-lg-3 col-md-4 col-6 col-padding product-card"
+              className="col-lg-3 col-md-4 col-padding product-card"
               key={_id}
             >
               <img src={img} alt={title} />

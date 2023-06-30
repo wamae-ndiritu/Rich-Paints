@@ -16,37 +16,24 @@ const CSR = () => {
             {images?.map((image, index) => {
               return (
                 <div
-                  className="col-lg-3 col-md-4 col-6 col-padding caption-cont product-card"
+                  className="col-lg-3 col-md-4 col-padding caption-cont product-card"
                   key={index}
                 >
-                  <div className="product-badge text-center">
-                    <p>After</p>
+                  <div className="bottom-badge text-center">
+                    <p>{title}</p>
                   </div>
                   <img src={image} alt="..." />
                 </div>
               );
             })}
-            {/* {before?.map((image, index) => {
-              return (
-                <div
-                  className="col-lg-3 col-md-4 col-6 col-padding caption-cont product-card"
-                  key={index}
-                >
-                  <div className="product-badge text-center">
-                    <p>Before</p>
-                  </div>
-                  <img src={image} alt="..." />
-                </div>
-              );
-            })} */}
             {after?.map((image, index) => {
               return (
                 <div
-                  className="col-lg-3 col-md-4 col-6 col-padding caption-cont product-card"
+                  className="col-lg-3 col-md-4 col-padding caption-cont product-card"
                   key={index}
                 >
-                  <div className="product-badge text-center">
-                    <p>After</p>
+                  <div className="bottom-badge text-center">
+                    <p>{title}</p>
                   </div>
                   <img src={image} alt="..." />
                 </div>

@@ -56,7 +56,12 @@
 }
 
 .project-caption {
-  background-color: #ed1c23;
+  /* background-color: #2e3092; */
+  background: linear-gradient(
+    111.9deg,
+    rgb(221, 49, 49) 0.3%,
+    rgb(0, 8, 119) 100.7%
+  );
   width: 100px;
   padding: 5px 0;
   color: #fff;
