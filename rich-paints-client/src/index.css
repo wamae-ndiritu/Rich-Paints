@@ -189,6 +189,10 @@ li {
   width: 100px !important;
 }
 
+.alert-message {
+  width: 80%;
+}
+
 @media (max-width: 434px) {
   .product-card img {
     max-height: 350px;
@@ -222,5 +226,9 @@ li {
 
   .product-overlay .h6 {
     font-size: 12px;
+  }
+
+  .alert-message {
+    width: 100%;
   }
 }

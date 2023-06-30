@@ -8,6 +8,7 @@ import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TitleBar from "../TitleBar";
+import Message from "../../utilityComponents/Message";
 
 const ToastObjects = {
   pauseOnFocusLoss: false,
@@ -22,6 +23,7 @@ const Contacts = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsError(false);
     emailjs
       .sendForm(
         "service_4gxtde7",
@@ -87,6 +89,9 @@ const Contacts = () => {
           </div>
           <div className="contact-right">
             <TitleBar className="right-title">LEAVE US A MESSAGE</TitleBar>
+            {isError && (
+              <Message variant="alert-danger">Message not sent!</Message>
+            )}
             <form className="message-form" ref={form} onSubmit={sendEmail}>
               <div class="mb-3">
                 <label for="name" class="form-label">
