@@ -17,7 +17,7 @@ const Navbar = () => {
   window.addEventListener("scroll", function () {
     const activeHeaders = document.querySelectorAll(".header");
     activeHeaders.forEach((activeHeader) => {
-      activeHeader?.classList.toggle("active-header", window.scrollY > 130);
+      activeHeader?.classList.toggle("active-header", window.scrollY > 200);
     });
   });
 
