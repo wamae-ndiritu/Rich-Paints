@@ -8,12 +8,14 @@ import Projects from "../components/projects/Projects";
 import Partners from "../components/partners/Partners";
 import CSR from "../components/projects/CSR";
 import PaintingTips from "../components/paintingTips/PaintingTips";
+import PaintsSection from "../components/PaintsSection";
 
 const HomeScreen = () => {
   return (
     <div>
       <Hero />
-      <Products />
+      <PaintsSection />
+      {/* <Products /> */}
       <TitleBar className="mb-3">Our Services</TitleBar>
       <Services />
       <AboutUs />
