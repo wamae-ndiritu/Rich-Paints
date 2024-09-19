@@ -38,10 +38,11 @@ const ProjectsSection = () => {
   return (
     <div className='py-12 bg-gray-100'>
       <div className='container mx-auto px-4'>
-        <h2 className='text-3xl font-bold text-gray-800 mb-8 text-center'>
-          Our Projects
-        </h2>
-
+        <div className='text-center mb-12'>
+            <h2 className='text-4xl font-bold text-indigo-600 mb-4'>
+              Our Projects
+            </h2>
+            </div>
         {/* Projects Grid */}
         <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
           {projects.map((project, index) => (
