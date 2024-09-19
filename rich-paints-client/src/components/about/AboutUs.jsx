@@ -1,9 +1,8 @@
 import React from "react";
-import TitleBar from "../TitleBar";
 
 const AboutUs = () => {
   return (
-    <div className='py-12 bg-gray-100'>
+    <div className='py-12 bg-gray-100' id="about-us">
       <div className='container mx-auto px-4'>
         {/* Section Title */}
         <div className='text-center mb-12'>

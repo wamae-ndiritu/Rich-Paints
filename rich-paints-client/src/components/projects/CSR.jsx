@@ -7,7 +7,7 @@ const CSR = () => {
     <div className='container mx-auto my-8'>
       <div className='text-center mb-12'>
         <h2 className='text-3xl font-semibold text-indigo-600 mb-4'>
-          Corporate Social Responsibility
+          Corporate Social Responsibility (CSR)
         </h2>
       </div>
       {CSRs.map((CSR) => {
