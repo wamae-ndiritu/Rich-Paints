@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import XIcon from "@mui/icons-material/Close"; // Temporary placeholder for the X logo
+import XIcon from "@mui/icons-material/Close";  
 
 const Footer = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);

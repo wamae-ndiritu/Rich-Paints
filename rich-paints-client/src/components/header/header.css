@@ -14,13 +14,19 @@
   width: 100%;
   background-color: #fff;
 }
+
+.bg-header{
+  background: linear-gradient(111.9deg,
+        rgb(0, 8, 119) 0.3%,
+        rgb(221, 49, 49) 100.7%)
+}
 .top-header {
   background: linear-gradient(
     111.9deg,
     rgb(221, 49, 49) 0.3%,
     rgb(0, 8, 119) 100.7%
   );
-  height: 40px;
+  height: 60px;
   width: 100%;
   padding-left: 250px;
   padding-right: 50px;

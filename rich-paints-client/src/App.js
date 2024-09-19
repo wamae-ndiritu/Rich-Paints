@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
-import Header from "./components/header/Header";
 import ProductPage from "./screens/ProductPage";
 import Footer from "./components/footer/Footer";
 import ContactsPage from "./screens/ContactsPage";
@@ -8,12 +7,13 @@ import ServicePage from "./screens/ServicePage";
 import AboutPage from "./screens/AboutPage";
 import ScrollToTop from "./utilities/ScroolToTop";
 import PaintingTipsPage from "./screens/PaintingTipsPage";
+import Navbar from "./components/header/Navbar";
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/products/:id" element={<ProductPage />} />
