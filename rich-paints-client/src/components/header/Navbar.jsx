@@ -59,6 +59,9 @@ const Navbar = () => {
               <a href='/#our-projects' className='hover:text-white'>
                 Projects
               </a>
+              <Link to='/interior-design' className='hover:text-white'>
+                Interior Design
+              </Link>
               <Link to='/painting-tips' className='hover:text-white'>
                 Painting Tips
               </Link>
@@ -100,7 +103,7 @@ const Navbar = () => {
               {menuVisible ? (
                 <CloseIcon />
               ) : (
-                <div className="flex justify-between px-4 py-2">
+                <div className='flex justify-between px-4 py-2'>
                   <div className='flex space-x-4'>
                     <a
                       href='https://www.facebook.com/profile.php?id=61555636222875'
