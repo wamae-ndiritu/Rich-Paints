@@ -1,19 +1,9 @@
 export const projects = [
-  // {
-  //   _id: 0,
-  //   category: "completed",
-  //   image: "/Images/projects/completed-1.jpeg",
-  // },
   {
     _id: 1,
     category: "completed",
     image: "/Images/projects/completed-2.jpeg",
   },
-  // {
-  //   _id: 2,
-  //   category: "completed",
-  //   image: "/Images/projects/completed-3.jpeg",
-  // },
   {
     _id: 4,
     category: "completed",
