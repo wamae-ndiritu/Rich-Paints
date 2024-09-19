@@ -5,8 +5,25 @@ import { ArrowLeft, ArrowRight, Close } from "@mui/icons-material";
 const projects = [
   { id: 1, image: "/Images/projects/completed-2.jpeg" },
   { id: 2, image: "/Images/projects/completed-6.jpeg" },
-  // Add more project images as needed
+  { id: 3, image: "/new/images/image-1.jpeg" },
+  { id: 4, image: "/new/images/image-2.jpeg" },
+  { id: 5, image: "/new/images/image-3.jpeg" },
+  { id: 6, image: "/new/images/image-4.jpeg" },
+  { id: 7, image: "/new/images/image-5.jpeg" },
+  { id: 8, image: "/new/images/image-6.jpeg" },
+  { id: 9, image: "/new/images/image-7.jpeg" },
+  { id: 10, image: "/new/images/image-8.jpeg" },
+  { id: 11, image: "/new/images/image-9.jpeg" },
+  { id: 12, image: "/new/images/image-10.jpeg" },
+  { id: 13, image: "/new/images/image-11.jpeg" },
+  { id: 14, image: "/new/images/image-12.jpeg" },
+  { id: 15, image: "/new/images/image-13.jpeg" },
+  { id: 16, image: "/new/images/image-14.jpeg" },
+  { id: 17, image: "/new/images/image-15.jpeg" },
+  { id: 18, image: "/new/images/image-16.jpeg" },
+  { id: 19, image: "/new/images/image-17.jpeg" },
 ];
+
 
 const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState(null);

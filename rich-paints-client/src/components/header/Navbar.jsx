@@ -162,10 +162,18 @@ const Navbar = () => {
           >
             Projects
           </a>
-          <Link to='/interior-design' className='hover:text-white'>
+          <Link
+            to='/interior-design'
+            className='hover:text-white'
+            onClick={toggleMenu}
+          >
             Interior Design
           </Link>
-          <Link to='/exterior-design' className='hover:text-white'>
+          <Link
+            to='/exterior-design'
+            className='hover:text-white'
+            onClick={toggleMenu}
+          >
             Exterior Design
           </Link>
           <Link
