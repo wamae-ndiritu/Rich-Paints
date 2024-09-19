@@ -7,6 +7,7 @@ import CSR from "../components/projects/CSR";
 import PaintingTips from "../components/paintingTips/PaintingTips";
 import PaintsSection from "../components/PaintsSection";
 import ProjectsSection from "../components/projects/ProjectsSection";
+import ContactUs from "../components/ContactUs";
 
 const HomeScreen = () => {
   return (
@@ -18,6 +19,7 @@ const HomeScreen = () => {
       <ProjectsSection />
       <CSR />
       <PaintingTips />
+      <ContactUs />
       <Partners />
     </div>
   );

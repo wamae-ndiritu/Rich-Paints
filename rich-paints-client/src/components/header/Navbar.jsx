@@ -62,6 +62,9 @@ const Navbar = () => {
               <Link to='/interior-design' className='hover:text-white'>
                 Interior Design
               </Link>
+              <Link to='/exterior-design' className='hover:text-white'>
+                Exterior Design
+              </Link>
               <Link to='/painting-tips' className='hover:text-white'>
                 Painting Tips
               </Link>
@@ -69,7 +72,7 @@ const Navbar = () => {
                 About Us
               </a>
               <a href='/#contact-us' className='hover:text-white'>
-                Contacts
+                Contact Us
               </a>
             </nav>
 
@@ -159,6 +162,12 @@ const Navbar = () => {
           >
             Projects
           </a>
+          <Link to='/interior-design' className='hover:text-white'>
+            Interior Design
+          </Link>
+          <Link to='/exterior-design' className='hover:text-white'>
+            Exterior Design
+          </Link>
           <Link
             to='/painting-tips'
             className='hover:text-red-500'
