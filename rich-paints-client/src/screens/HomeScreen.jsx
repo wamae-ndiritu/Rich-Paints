@@ -1,6 +1,5 @@
 import React from "react";
 import Hero from "../components/hero/Hero";
-import Products from "../components/products/Products";
 import Services from "../components/services/Services";
 import TitleBar from "../components/TitleBar";
 import AboutUs from "../components/about/AboutUs";
@@ -15,8 +14,6 @@ const HomeScreen = () => {
     <div>
       <Hero />
       <PaintsSection />
-      {/* <Products /> */}
-      <TitleBar className="mb-3">Our Services</TitleBar>
       <Services />
       <AboutUs />
       <Projects />

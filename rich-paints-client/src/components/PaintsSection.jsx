@@ -69,7 +69,7 @@ const paints = [
 
 export default function PaintsSection() {
   return (
-    <section className='bg-gray-100 py-12'>
+    <section className='bg-gray-100 pt-12'>
       {/* Section Title and Description */}
       <div className='text-center w-full md:w-4/5 mx-auto mb-5'>
         <h1 className='text-4xl font-bold text-indigo-600 mb-4'>

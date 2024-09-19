@@ -16,7 +16,7 @@ export const services = [
   {
     _id: 2,
     title: "Technical Support & Customer Service",
-    image: "/icons/icon-1.jfif",
+    image: "/new/images/man-painting.png",
     descrption:
       "At Rich Paints Ltd, we understand that a successful painting experience goes beyond providing top-quality paints. That's why we offer dedicated Technical Support and Customer Service to ensure your satisfaction throughout your paint journey.",
   },
