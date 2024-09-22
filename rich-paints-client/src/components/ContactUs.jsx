@@ -41,7 +41,7 @@ const ContactUs = () => {
       setLoading(true);
 
       // Send the email through the backend
-      fetch("http://localhost:5000/send-email", {
+      fetch("https://rich-paints.onrender.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,15 +54,16 @@ const ContactUs = () => {
         }),
       })
         .then((response) => {
-          response.json()
-           if (response.status === 200) {
-             setLoading(false);
-             toast.success("Message sent successfully!", ToastObjects);
-           } else {
-             setErrorMessage("Failed to send message!");
-             setLoading(false);
-           }
-        }).catch((error) => {
+          response.json();
+          if (response.status === 200) {
+            setLoading(false);
+            toast.success("Message sent successfully!", ToastObjects);
+          } else {
+            setErrorMessage("Failed to send message!");
+            setLoading(false);
+          }
+        })
+        .catch((error) => {
           setLoading(false);
           console.error("Error sending email:", error);
           setErrorMessage("Failed to send message!");
