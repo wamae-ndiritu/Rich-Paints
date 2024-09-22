@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconButton } from "@mui/material";
 import { ArrowLeft, ArrowRight, Close } from "@mui/icons-material";
+import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import EastIcon from "@mui/icons-material/East";
 
 const projects = [
   { id: 1, image: "/Images/projects/completed-2.jpeg" },
@@ -14,20 +17,26 @@ const projects = [
   { id: 9, image: "/new/images/image-7.jpeg" },
   { id: 10, image: "/new/images/image-8.jpeg" },
   { id: 11, image: "/new/images/image-9.jpeg" },
-  { id: 12, image: "/new/images/image-10.jpeg" },
-  { id: 13, image: "/new/images/image-11.jpeg" },
-  { id: 14, image: "/new/images/image-12.jpeg" },
-  { id: 15, image: "/new/images/image-13.jpeg" },
-  { id: 16, image: "/new/images/image-14.jpeg" },
-  { id: 17, image: "/new/images/image-15.jpeg" },
-  { id: 18, image: "/new/images/image-16.jpeg" },
-  { id: 19, image: "/new/images/image-17.jpeg" },
+  { id: 12, image: "/new/images/image-11.jpeg" },
+  { id: 13, image: "/new/images/image-12.jpeg" },
+  { id: 14, image: "/new/images/image-13.jpeg" },
+  { id: 15, image: "/new/images/image-15.jpeg" },
+  { id: 16, image: "/new/images/image-16.jpeg" },
+  { id: 17, image: "/new/images/image-17.jpeg" },
 ];
-
 
 const ProjectsSection = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation();
+  const path = location ? location.pathname : null;
+  const [isHomePage, setIsHomePage] = useState(false);
+
+  useEffect(() => {
+    if (path === "/") {
+      setIsHomePage(true);
+    }
+  }, [path]);
 
   const handleImageClick = (image, index) => {
     setSelectedImage(image);
@@ -53,30 +62,59 @@ const ProjectsSection = () => {
   };
 
   return (
-    <div className='py-12 bg-gray-100' id="our-projects">
+    <div className='py-12 bg-gray-100' id='our-projects'>
       <div className='container mx-auto px-4'>
         <div className='text-center mb-12'>
-            <h2 className='text-4xl font-bold text-indigo-600 mb-4'>
-              Our Projects
-            </h2>
-            </div>
-        {/* Projects Grid */}
-        <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className='relative cursor-pointer'
-              onClick={() => handleImageClick(project.image, index)}
-            >
-              <img
-                src={project.image}
-                alt={`Project ${project.id}`}
-                className='w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105'
-              />
-            </div>
-          ))}
+          <h2 className='text-4xl font-bold text-indigo-600 mb-4'>
+            Our Projects
+          </h2>
         </div>
-
+        {/* Projects Grid */}
+        {isHomePage ? (
+          <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+            {projects.slice(0, 3).map((project, index) => (
+              <div
+                key={project.id}
+                className='relative cursor-pointer'
+                onClick={() => handleImageClick(project.image, index)}
+              >
+                <img
+                  src={project.image}
+                  alt={`Project ${project.id}`}
+                  className='w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105'
+                />
+              </div>
+            ))}
+            {/* View More Button */}
+            <div className='col-span-1 sm:col-span-2 md:col-span-3 flex justify-center my-2'>
+              <Link
+                to='/our-projects'
+                className='cursor-pointer inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300'
+              >
+                <h6 className='text-lg font-semibold'>View More</h6>
+                <div className='ml-2'>
+                  <EastIcon className='text-indigo-600 hover:ml-3 transition-all duration-300' />
+                </div>
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                className='relative cursor-pointer'
+                onClick={() => handleImageClick(project.image, index)}
+              >
+                <img
+                  src={project.image}
+                  alt={`Project ${project.id}`}
+                  className='w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105'
+                />
+              </div>
+            ))}
+          </div>
+        )}
         {/* Image Modal */}
         {selectedImage && (
           <div className='fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50'>

@@ -50,15 +50,18 @@ const Navbar = () => {
           <div className='w-full md:flex-grow md:px-12 flex justify-between items-center'>
             {/* Left side: Links */}
             <nav className='hidden md:flex space-x-8'>
-              <a href='/#explore-paints' className='hover:text-white'>
-                Paints
+              <a href='/#about-us' className='hover:text-white'>
+                About Us
               </a>
+              <Link to='/our-paints' className='hover:text-white'>
+                Paints
+              </Link>
               <a href='/#our-services' className='hover:text-white'>
                 Our Services
               </a>
-              <a href='/#our-projects' className='hover:text-white'>
+              <Link to='/our-projects' className='hover:text-white'>
                 Projects
-              </a>
+              </Link>
               <Link to='/interior-design' className='hover:text-white'>
                 Interior Design
               </Link>
@@ -68,38 +71,10 @@ const Navbar = () => {
               <Link to='/painting-tips' className='hover:text-white'>
                 Painting Tips
               </Link>
-              <a href='/#about-us' className='hover:text-white'>
-                About Us
-              </a>
               <a href='/#contact-us' className='hover:text-white'>
                 Contact Us
               </a>
             </nav>
-
-            {/* Right side: Social Icons */}
-            <div className='hidden md:flex space-x-4'>
-              <a
-                href='https://www.facebook.com/profile.php?id=61555636222875'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FacebookIcon className='hover:text-blue-500' />
-              </a>
-              <a
-                href='https://x.com/PaintsRich49354'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <XIcon className='hover:text-blue-500' />
-              </a>
-              <a
-                href='https://www.instagram.com/richpaintskenya/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <InstagramIcon className='hover:text-pink-500' />
-              </a>
-            </div>
 
             {/* Hamburger Menu for mobile view */}
             <div className='w-full md:hidden' onClick={toggleMenu}>
@@ -142,12 +117,15 @@ const Navbar = () => {
       {isMobile && menuVisible && (
         <nav className='bg-header text-white flex flex-col space-y-4 py-4 px-6 md:hidden'>
           <a
-            href='/#explore-paints'
+            href='/#about-us'
             className='hover:text-red-500'
             onClick={toggleMenu}
           >
-            Paints
+            About Us
           </a>
+          <Link to='/our-paints' className='hover:text-white' onClick={toggleMenu}>
+            Paints
+          </Link>
           <a
             href='/#our-services'
             className='hover:text-red-500'
@@ -155,13 +133,13 @@ const Navbar = () => {
           >
             Our Services
           </a>
-          <a
-            href='/#our-projects'
+          <Link
+            to='/our-projects'
             className='hover:text-red-500'
             onClick={toggleMenu}
           >
             Projects
-          </a>
+          </Link>
           <Link
             to='/interior-design'
             className='hover:text-white'
@@ -184,18 +162,11 @@ const Navbar = () => {
             Painting Tips
           </Link>
           <a
-            href='/#about-us'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
-          >
-            About Us
-          </a>
-          <a
             href='/#contact-us'
             className='hover:text-red-500'
             onClick={toggleMenu}
           >
-            Contacts
+            Contact Us
           </a>
         </nav>
       )}

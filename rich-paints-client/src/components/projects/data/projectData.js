@@ -53,30 +53,11 @@ export const CSRs = [
   {
     _id: 0,
     title: "Dandora Police Facelift",
-    before: [
-      "/Images/csr/dandora-police/dandora-6.jpeg",
-      "/Images/csr/dandora-police/dandora-7.jpeg",
-      "/Images/csr/dandora-police/dandora-5.jpeg",
-    ],
-    after: [
-      "/Images/csr/dandora-police/dandora-1.jpeg",
-      "/Images/csr/dandora-police/dandora-2.jpeg",
-      "/Images/csr/dandora-police/dandora-3.jpeg",
-      "/Images/csr/dandora-police/dandora-4.jpeg",
-    ],
+    image: "/Images/csr/dandora-police/dandora-2.jpeg",
   },
   {
     _id: 1,
     title: "Dandora Hip Hop City",
-    images: [
-      "/Images/csr/dandora-hiphop-city/dandora-hip-hop-1.jpeg",
-      "/Images/csr/dandora-hiphop-city/dandora-hip-hop-2.jpeg",
-      "/Images/csr/dandora-hiphop-city/dandora-hip-hop-3.jpeg",
-    ],
-  },
-  {
-    _id: 2,
-    title: "Victorious Army Church",
-    images: ["/Images/csr/vac-church-1.jpeg"],
+    image: "/Images/csr/dandora-hiphop-city/dandora-hip-hop-1.jpeg",
   },
 ];

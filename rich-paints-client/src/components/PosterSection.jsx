@@ -11,7 +11,6 @@ const posters = [
   { id: 8, image: "/new/posters/poster-8.jpeg", title: "Poster 8" },
   { id: 9, image: "/new/posters/poster-9.jpeg", title: "Poster 9" },
   { id: 10, image: "/new/posters/poster-10.jpeg", title: "Poster 10" },
-  { id: 11, image: "/new/posters/poster-11.jpeg", title: "Poster 11" },
 ];
 
 const PosterSection = () => {
