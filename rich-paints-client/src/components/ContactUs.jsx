@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import Toast from "../utilityComponents/Toast";
-import Message from "../utilityComponents/Message";
+import ErrorMessage from "../utilityComponents/ErrorMessage";
+import Spinner from "../utilityComponents/Spinner";
 
 const ToastObjects = {
   pauseOnFocusLoss: false,
@@ -13,8 +13,8 @@ const ToastObjects = {
 
 const ContactUs = () => {
   const form = useRef();
-  const [isError, setIsError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("Message not sent!");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [details, setDetails] = useState({
     user_name: "",
     user_email: "",
@@ -26,40 +26,64 @@ const ContactUs = () => {
     setDetails({ ...details, [e.target.name]: e.target.value });
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setIsError(false);
+    const sendEmail = (e) => {
+      e.preventDefault();
+      setErrorMessage(null);
+      if (
+        details.user_name === "" ||
+        details.user_email === "" ||
+        details.subject === "" ||
+        details.message === ""
+      ) {
+        setErrorMessage("All fields are required!");
+        return;
+      }
+      setLoading(true);
 
-    if (
-      details.user_name === "" ||
-      details.user_email === "" ||
-      details.subject === "" ||
-      details.message === ""
-    ) {
-      setErrorMessage("All fields required!");
-      setIsError(true);
-    } else {
-      emailjs
-        .sendForm(
-          "service_4gxtde7",
-          "template_htmmfp8",
-          form.current,
-          "KehPQQgwKRR6ja30g"
-        )
-        .then(
-          (result) => {
-            toast.success("Message sent successfully!", ToastObjects);
-          },
-          (error) => {
-            setIsError(true);
-          }
-        );
-    }
-    e.target.reset();
-  };
+      // Send the email through the backend
+      fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: details.user_email,
+          subject: details.subject,
+          message: details.message,
+          name: details.user_name,
+        }),
+      })
+        .then((response) => {
+          response.json()
+           if (response.status === 200) {
+             setLoading(false);
+             toast.success("Message sent successfully!", ToastObjects);
+           } else {
+             setErrorMessage("Failed to send message!");
+             setLoading(false);
+           }
+        }).catch((error) => {
+          setLoading(false);
+          console.error("Error sending email:", error);
+          setErrorMessage("Failed to send message!");
+        });
+
+      e.target.reset();
+    };
+
+    useEffect(() => {
+      if (errorMessage){
+        const timeout = setTimeout(() => {
+          setErrorMessage(null);
+        }, 5000);
+
+        return () => clearTimeout(timeout);
+      }
+    }, [errorMessage])
+
 
   return (
-    <div className='container mx-auto mt-10 px-4' id="contact-us">
+    <div className='container mx-auto mt-10 px-4' id='contact-us'>
       <Toast />
       <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
         {/* Left side: Image */}
@@ -76,7 +100,8 @@ const ContactUs = () => {
           <h2 className='text-2xl font-semibold mb-4 text-center'>
             Leave Us a Message
           </h2>
-          {isError && <Message variant='alert-danger'>{errorMessage}</Message>}
+          {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+          {loading && <Spinner />}
           <form ref={form} onSubmit={sendEmail}>
             <div className='mb-4'>
               <label
