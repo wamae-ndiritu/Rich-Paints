@@ -1,33 +1,58 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import TopHeader from "./TopHeader";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import XIcon from "@mui/icons-material/Close";  
+import XIcon from "@mui/icons-material/Close";
 import "./header.css";
 
 const Navbar = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Toggle Menu Visibility
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
-  // Handle resizing to switch between mobile and desktop views
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Hide menu when route changes or on initial load
   useEffect(() => {
     setMenuVisible(false);
-  }, []);
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const handleScrollLinkClick = (path, hash) => {
+    if (path === location.pathname) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate(path + hash);
+    }
+    toggleMenu();
+  };
+
+  const getLinkClasses = (path, hash) => {
+    return `hover:text-red-500 ${
+      location.pathname + location.hash === path + hash
+        ? "text-red-500 font-bold"
+        : "text-white"
+    }`;
+  };
 
   return (
     <header className='bg-gray-800 text-white mb-12 border-b border-blue-500'>
@@ -41,37 +66,64 @@ const Navbar = () => {
 
         {/* Right Side: TopBar and Navigation */}
         <div className='col-span-1 md:col-span-10 bg-header flex flex-col md:h-32'>
-          {/* Topbar (1/3 of the height) */}
-          <div className=''>
-            <TopHeader />
-          </div>
+          <TopHeader />
 
-          {/* Navigation Links (2/3 of the height) */}
           <div className='w-full md:flex-grow md:px-12 flex justify-between items-center'>
-            {/* Left side: Links */}
             <nav className='hidden md:flex space-x-8'>
-              <a href='/#about-us' className='hover:text-white'>
+              <a
+                href='/#about-us'
+                className={getLinkClasses("/", "#about-us")}
+                onClick={() => handleScrollLinkClick("/", "#about-us")}
+              >
                 About Us
               </a>
-              <Link to='/our-paints' className='hover:text-white'>
+              <Link
+                to='/our-paints'
+                className={getLinkClasses("/our-paints", "")}
+                onClick={() => handleScrollLinkClick("/our-paints", "")}
+              >
                 Paints
               </Link>
-              <a href='/#our-services' className='hover:text-white'>
+              <a
+                href='/#our-services'
+                className={getLinkClasses("/", "#our-services")}
+                onClick={() => handleScrollLinkClick("/", "#our-services")}
+              >
                 Our Services
               </a>
-              <Link to='/our-projects' className='hover:text-white'>
+              <Link
+                to='/our-projects'
+                className={getLinkClasses("/our-projects", "")}
+                onClick={() => handleScrollLinkClick("/our-projects", "")}
+              >
                 Projects
               </Link>
-              <Link to='/interior-design' className='hover:text-white'>
+              <Link
+                to='/interior-design'
+                className={getLinkClasses("/interior-design", "")}
+                onClick={() => handleScrollLinkClick("/interior-design", "")}
+              >
                 Interior Design
               </Link>
-              <Link to='/exterior-design' className='hover:text-white'>
+              <Link
+                to='/exterior-design'
+                className={getLinkClasses("/exterior-design", "")}
+                onClick={() => handleScrollLinkClick("/exterior-design", "")}
+              >
                 Exterior Design
               </Link>
-              <Link to='/painting-tips' className='hover:text-white'>
+              <Link
+                to='/painting-tips'
+                className={getLinkClasses("/painting-tips", "")}
+                onClick={() => handleScrollLinkClick("/painting-tips", "")}
+              >
                 Painting Tips
               </Link>
-              <a href='/#contact-us' className='hover:text-white'>
+              <a
+                href='/#contact-us'
+                className={getLinkClasses("/", "#contact-us")}
+                onClick={() => handleScrollLinkClick("/", "#contact-us")}
+              >
                 Contact Us
               </a>
             </nav>
@@ -118,53 +170,57 @@ const Navbar = () => {
         <nav className='bg-header text-white flex flex-col space-y-4 py-4 px-6 md:hidden'>
           <a
             href='/#about-us'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
+            className={getLinkClasses("/", "#about-us")}
+            onClick={() => handleScrollLinkClick("/", "#about-us")}
           >
             About Us
           </a>
-          <Link to='/our-paints' className='hover:text-white' onClick={toggleMenu}>
+          <Link
+            to='/our-paints'
+            className={getLinkClasses("/our-paints", "")}
+            onClick={() => handleScrollLinkClick("/our-paints", "")}
+          >
             Paints
           </Link>
           <a
             href='/#our-services'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
+            className={getLinkClasses("/", "#our-services")}
+            onClick={() => handleScrollLinkClick("/", "#our-services")}
           >
             Our Services
           </a>
           <Link
             to='/our-projects'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
+            className={getLinkClasses("/our-projects", "")}
+            onClick={() => handleScrollLinkClick("/our-projects", "")}
           >
             Projects
           </Link>
           <Link
             to='/interior-design'
-            className='hover:text-white'
-            onClick={toggleMenu}
+            className={getLinkClasses("/interior-design", "")}
+            onClick={() => handleScrollLinkClick("/interior-design", "")}
           >
             Interior Design
           </Link>
           <Link
             to='/exterior-design'
-            className='hover:text-white'
-            onClick={toggleMenu}
+            className={getLinkClasses("/exterior-design", "")}
+            onClick={() => handleScrollLinkClick("/exterior-design", "")}
           >
             Exterior Design
           </Link>
           <Link
             to='/painting-tips'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
+            className={getLinkClasses("/painting-tips", "")}
+            onClick={() => handleScrollLinkClick("/painting-tips", "")}
           >
             Painting Tips
           </Link>
           <a
             href='/#contact-us'
-            className='hover:text-red-500'
-            onClick={toggleMenu}
+            className={getLinkClasses("/", "#contact-us")}
+            onClick={() => handleScrollLinkClick("/", "#contact-us")}
           >
             Contact Us
           </a>

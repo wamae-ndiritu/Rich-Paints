@@ -4,7 +4,6 @@ import EastIcon from "@mui/icons-material/East";
 
 const Services = () => {
   return (
-    <>
       <div className='py-12 bg-white' id="our-services">
         <div className='container mx-auto px-4'>
           {/* Section Title and Description */}
@@ -61,7 +60,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 

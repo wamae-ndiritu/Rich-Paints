@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import XIcon from "@mui/icons-material/Close";  
+import XIcon from "@mui/icons-material/Close";
 
-const Footer = () => {
+const Footer = ({ handleScrollLinkClick }) => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   // Scroll event listener to show/hide the scroll-to-top button
@@ -44,49 +44,81 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Center Section */}
+          {/* Center Section with Links */}
           <div className='flex flex-col items-center md:items-start'>
             <h4 className='text-lg font-semibold mb-4'>Quick Links</h4>
             <ul className='space-y-2'>
               <li>
-                <Link
-                  to='/'
+                <a
+                  href='/#about-us'
                   className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/", "#about-us")}
                 >
-                  Products
-                </Link>
+                  About Us
+                </a>
               </li>
               <li>
                 <Link
-                  to='/projects'
+                  to='/our-paints'
                   className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/our-paints", "")}
+                >
+                  Paints
+                </Link>
+              </li>
+              <li>
+                <a
+                  href='/#our-services'
+                  className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/", "#our-services")}
+                >
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <Link
+                  to='/our-projects'
+                  className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/our-projects", "")}
                 >
                   Projects
                 </Link>
               </li>
               <li>
                 <Link
-                  to='/about'
+                  to='/interior-design'
                   className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/interior-design", "")}
                 >
-                  About Us
+                  Interior Design
                 </Link>
               </li>
               <li>
                 <Link
-                  to='/contacts'
+                  to='/exterior-design'
                   className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/exterior-design", "")}
                 >
-                  Contact Us
+                  Exterior Design
                 </Link>
               </li>
               <li>
                 <Link
-                  to='/'
+                  to='/painting-tips'
                   className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/painting-tips", "")}
                 >
                   Painting Tips
                 </Link>
+              </li>
+              <li>
+                <a
+                  href='/#contact-us'
+                  className='text-gray-300 hover:text-white transition'
+                  onClick={() => handleScrollLinkClick("/", "#contact-us")}
+                >
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
@@ -109,7 +141,6 @@ const Footer = () => {
                 target='_blank'
                 className='text-blue-400 hover:text-blue-600'
               >
-                {/* X Icon as a placeholder */}
                 <XIcon style={{ fontSize: 24 }} />
               </a>
               <a
