@@ -28,12 +28,13 @@ export default function Hero() {
   return (
     <div className='relative container mx-auto mb-6'>
       {/* Carousel container */}
-      <div className='w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg shadow-lg relative group'>
+      <div className='w-full h-64 sm:h-80 md:h-[65vh] overflow-hidden rounded-lg shadow-lg relative group'>
         {/* Slide */}
-        <div
-          className='w-full h-full bg-cover bg-center transition-all duration-500 ease-in-out'
-          style={{ backgroundImage: `url(${banners[currentIndex].img})` }}
-        ></div>
+        <img
+          src={banners[currentIndex].img}
+          alt={`Banner ${currentIndex + 1}`}
+          className='w-full h-full  transition-transform duration-500 ease-in-out'
+        />
 
         {/* Left Arrow */}
         <button

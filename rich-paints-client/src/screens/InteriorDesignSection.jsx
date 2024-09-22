@@ -8,14 +8,14 @@ const InteriorDesignSection = () => {
           {/* Left Side: Image */}
           <div className='md:w-1/2 mb-8 md:mb-0'>
             <img
-              src='/new/images/wall-painting-with-roller-concept.jpg'
-              alt='Interior Design'
-              className='rounded-lg shadow-lg mb-3'
-            />
-            <img
               src='/new/images/interior.jpeg'
               alt='Interior Design'
               className='rounded-lg shadow-lg'
+            />
+            <img
+              src='/new/images/wall-painting-with-roller-concept.jpg'
+              alt='Interior Design'
+              className='rounded-lg shadow-lg mb-3'
             />
           </div>
           {/* Right Side: Text Content */}
