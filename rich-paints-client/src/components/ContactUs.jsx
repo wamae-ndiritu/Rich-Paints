@@ -90,7 +90,7 @@ const ContactUs = () => {
         {/* Left side: Image */}
         <div className='flex justify-center items-center'>
           <img
-            src='/new/images/man-with-brush.jpg'
+            src='/new/images/roller-brush.jpg'
             alt='Contact us'
             className='rounded-lg shadow-lg max-h-[400px] object-cover'
           />
@@ -98,7 +98,7 @@ const ContactUs = () => {
 
         {/* Right side: Form */}
         <div className='bg-white p-6 rounded-lg shadow-lg'>
-          <h2 className='text-2xl font-semibold mb-4 text-center'>
+          <h2 className='text-2xl font-semibold mb-4'>
             Leave Us a Message
           </h2>
           {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
@@ -171,7 +171,7 @@ const ContactUs = () => {
             <div className='flex justify-center'>
               <button
                 type='submit'
-                className='bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300'
+                className='w-full bg-red-800 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300'
               >
                 Send Message
               </button>

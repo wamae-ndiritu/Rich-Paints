@@ -29,7 +29,7 @@ const Footer = ({ handleScrollLinkClick }) => {
 
   return (
     <>
-      <footer className='bg-gray-800 text-white py-10 relative'>
+      <footer className='bg-gray-800 text-white py-10 px-4 md:px-0 relative'>
         <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'>
           {/* Left Section */}
           <div>
@@ -45,7 +45,7 @@ const Footer = ({ handleScrollLinkClick }) => {
           </div>
 
           {/* Center Section with Links */}
-          <div className='flex flex-col items-center md:items-start'>
+          <div className='flex flex-col'>
             <h4 className='text-lg font-semibold mb-4'>Quick Links</h4>
             <ul className='space-y-2'>
               <li>
@@ -124,7 +124,7 @@ const Footer = ({ handleScrollLinkClick }) => {
           </div>
 
           {/* Right Section */}
-          <div className='flex flex-col items-center md:items-start'>
+          <div className='flex flex-col'>
             <h4 className='text-lg font-semibold mb-4'>Stay Connected</h4>
             <div className='flex mb-4 space-x-3'>
               <a

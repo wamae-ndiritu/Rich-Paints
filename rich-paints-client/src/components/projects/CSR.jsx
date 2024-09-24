@@ -10,7 +10,11 @@ const CSR = () => {
           Corporate Social Responsibility (CSR)
         </h2>
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6'>
+      <div
+        className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${
+          CSRs.length > 2 ? "4" : "2"
+        } lg:grid-cols-${CSRs.length > 2 ? "4" : "2"} gap-6`}
+      >
         {CSRs.map((CSR) => {
           const { _id, title, image } = CSR;
           return (
@@ -24,7 +28,7 @@ const CSR = () => {
               <img
                 src={image}
                 alt={title}
-                className='w-full h-48 object-cover rounded-lg'
+                className='w-full h-96 object-cover rounded-lg'
               />
             </div>
           );

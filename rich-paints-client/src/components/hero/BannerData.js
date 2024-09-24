@@ -12,7 +12,11 @@ export const banners = [
     img: "/banners/banner-3.png",
   },
   {
-    id: 2,
+    id: 3,
     img: "/banners/banner-4.png",
-  }
+  },
+  {
+    id: 4,
+    img: "/banners/banner-5.jpeg",
+  },
 ];
